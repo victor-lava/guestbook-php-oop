@@ -25,18 +25,20 @@ if(count($_POST) > 0) {
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
-
+            <h3 class="pb-3 mb-4 mt-3 font-italic border-bottom">
+              Leave a review
+            </h3>
             <!--  FORM -->
             <form method="POST" class="needs-validation mt-4" novalidate="">
               <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                   <label for="firstName">First name </label>
                   <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                   <label for="lastName">Last name</label>
                   <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required="">
                   <div class="invalid-feedback">
@@ -67,7 +69,7 @@ if(count($_POST) > 0) {
         </div><!-- /.blog-main -->
 
         <aside class="col-md-4 blog-sidebar">
-            
+
           <?php include_once ('partials/about.php'); ?>
 
           <div class="p-3">

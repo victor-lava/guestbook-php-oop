@@ -13,7 +13,7 @@
       <div class="row mb-2">
         <?php foreach($reviews->getFeatured() as $review): ?>
         <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card flex-md-row mb-4 mt-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-primary">
                   <?php echo $review->f_name; ?>

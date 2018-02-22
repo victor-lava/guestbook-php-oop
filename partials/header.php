@@ -7,5 +7,4 @@
       <a class="btn btn-sm btn-outline-secondary" href="review.php">Leave a review</a>
     </div>
   </div>
-  <hr>
 </header>
