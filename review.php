@@ -1,10 +1,8 @@
 <?php
-
 include ('classes/Review.class.php');
-// print_R(count($_POST));
 
 if(count($_POST) > 0) {
-    // echo "POSTAS YRA";
+
     $review = new Review();
     $review->addReview($_POST["firstName"],
                        $_POST["lastName"],
@@ -12,12 +10,11 @@ if(count($_POST) > 0) {
                        $_POST["review"]);
 
 
-
-    header('Location: review.php');
+    header('Location: index.php');
     die();
 }
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">

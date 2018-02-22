@@ -34,7 +34,7 @@ class Review {
         $sql = 'SELECT * FROM review';
         $query = $this->pdo->prepare($sql);
         $query->execute();
-        $reviews = $query->fetchAll(PDO::FETCH_ASSOC);
+        $reviews = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $reviews;
 
@@ -45,7 +45,7 @@ class Review {
         $sql = 'SELECT * FROM review WHERE featured = 1 ORDER BY date LIMIT 2';
         $query = $this->pdo->prepare($sql);
         $query->execute();
-        $reviews = $query->fetchAll(PDO::FETCH_ASSOC);
+        $reviews = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $reviews;
 
@@ -56,7 +56,7 @@ class Review {
         $sql = 'SELECT * FROM review WHERE featured = 0 ORDER BY date';
         $query = $this->pdo->prepare($sql);
         $query->execute();
-        $reviews = $query->fetchAll(PDO::FETCH_ASSOC);
+        $reviews = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $reviews;
 
