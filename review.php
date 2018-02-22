@@ -1,3 +1,24 @@
+<?php
+
+include ('classes/Review.class.php');
+// print_R(count($_POST));
+
+if(count($_POST) > 0) {
+    // echo "POSTAS YRA";
+    $review = new Review();
+    $review->addReview($_POST["firstName"],
+                       $_POST["lastName"],
+                       $_POST["email"],
+                       $_POST["review"]);
+
+
+
+    header('Location: review.php');
+    die();
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,18 +57,18 @@
         <div class="col-md-8 blog-main">
 
             <!--  FORM -->
-            <form class="needs-validation mt-4" novalidate="">
+            <form method="POST" class="needs-validation mt-4" novalidate="">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">First name </label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="lastName">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
@@ -56,7 +77,7 @@
 
               <div class="mb-3">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
@@ -64,7 +85,7 @@
 
               <div class="mb-3">
                 <label for="review">Review</label>
-                <textarea id="textarea" class="form-control" rows="6"></textarea>
+                <textarea id="textarea" class="form-control" rows="6" name="review"></textarea>
                 <div class="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
