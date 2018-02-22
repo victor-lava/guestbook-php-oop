@@ -1,4 +1,6 @@
+<?php include_once ('classes/Helper.class.php'); ?>
 <?php include_once ('classes/Review.class.php'); ?>
+
 <?php $reviews = new Review(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,9 +47,9 @@
               <h3 class="mb-0">
                 <a class="text-dark" href="#"><?php echo $review->email; ?></a>
               </h3>
-              <div class="mb-1 text-muted"><?php echo $review->date; ?></div>
+              <div class="mb-1 text-muted"><?php echo Helper::format_date($review->date); ?></div>
               <p class="card-text mb-auto">
-                  <?php echo $review->review; ?>
+                  <?php echo Helper::str_limit($review->review, 150); ?>
               </p>
             </div>
             <img class="card-img-right flex-auto d-none d-md-block"  alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' %3e%3crect x='0' y='0' width='120' height='120' fill='black' opacity='1'%3e%3c/rect%3e%3ctext x='100' y='100' font-family='Verdana' font-size='35' fill='red'%3eTekstukas%3c/text%3e%3c/svg%3e" data-holder-rendered="true">
@@ -66,8 +68,8 @@
 
           <?php foreach($reviews->getNonFeatured() as $review): ?>
           <div class="blog-post">
-            <h2 class="blog-post-title"><?php echo $review->email; ?></h2>
-            <p class="blog-post-meta"><?php echo $review->date; ?> by <a href="#"><?php echo $review->f_name . ' ' . $review->l_name; ?></a></p>
+            <h2 class="blog-post-title"><?php echo Helper::str_limit($review->review, 25); ?></h2>
+            <p class="blog-post-meta"><?php echo Helper::format_date($review->date); ?> by <a href="#"><?php echo $review->f_name . ' ' . $review->l_name; ?> (<?php echo $review->email; ?>)</a></p>
 
             <p><?php echo $review->review; ?></p>
             <hr>
