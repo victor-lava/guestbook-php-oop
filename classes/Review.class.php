@@ -42,7 +42,7 @@ class Review {
 
     public function getFeatured() {
 
-        $sql = 'SELECT * FROM review WHERE featured = 1 ORDER BY date LIMIT 2';
+        $sql = 'SELECT * FROM review WHERE featured = 1 ORDER BY date DESC LIMIT 2';
         $query = $this->pdo->prepare($sql);
         $query->execute();
         $reviews = $query->fetchAll(PDO::FETCH_OBJ);
@@ -53,7 +53,7 @@ class Review {
 
     public function getNonFeatured() {
 
-        $sql = 'SELECT * FROM review WHERE featured = 0 ORDER BY date';
+        $sql = 'SELECT * FROM review WHERE featured = 0 ORDER BY date DESC';
         $query = $this->pdo->prepare($sql);
         $query->execute();
         $reviews = $query->fetchAll(PDO::FETCH_OBJ);
