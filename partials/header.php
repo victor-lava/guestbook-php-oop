@@ -4,7 +4,7 @@
       <a class="blog-header-logo text-dark" href="index.php">Guestbook</a>
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
-      <a class="btn btn-sm btn-outline-secondary" href="review.php">Leave a review</a>
+      <a class="btn btn-lg btn-primary" href="review.php">Leave a review</a>
     </div>
   </div>
 </header>
