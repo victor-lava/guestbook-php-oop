@@ -1,5 +1,4 @@
-<?php
-include ('classes/Review.class.php');
+<?php include ('classes/Review.class.php');
 
 if(count($_POST) > 0) {
 
@@ -15,38 +14,12 @@ if(count($_POST) > 0) {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-
-    <title>Guestbook</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="assets/fonts.css" rel="stylesheet">
-    <link href="assets/blog.css" rel="stylesheet">
-  </head>
-
+<!-- <html> -->
+<?php include_once ('partials/head.php'); ?>
   <body>
 
     <div class="container">
-      <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4">
-            <a class="blog-header-logo text-dark" href="index.php">Guestbook</a>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="btn btn-sm btn-outline-secondary" href="review.php">Leave a review</a>
-          </div>
-        </div>
-      </header>
+      <?php include_once ('partials/header.php'); ?>
     </div>
 
     <main role="main" class="container">
@@ -94,10 +67,8 @@ if(count($_POST) > 0) {
         </div><!-- /.blog-main -->
 
         <aside class="col-md-4 blog-sidebar">
-          <div class="p-3 mb-3 mt-4 bg-light rounded">
-            <h4 class="font-italic">About</h4>
-            <p class="mb-0">This is a guestbook of my website, it's really cool.</p>
-          </div>
+            
+          <?php include_once ('partials/about.php'); ?>
 
           <div class="p-3">
             <h4 class="font-italic">Archives</h4>
@@ -130,31 +101,4 @@ if(count($_POST) > 0) {
       </div><!-- /.row -->
 
     </main><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="assets/popper.min.js"></script>
-    <script src="assets/bootstrap.min.js"></script>
-    <script src="assets/holder.min.js"></script>
-    <script>
-      Holder.addTheme('thumb', {
-        bg: '#55595c',
-        fg: '#eceeef',
-        text: 'Thumbnail'
-      });
-    </script>
-
-
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="250" viewBox="0 0 200 250" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="13" style="font-weight:bold;font-size:13pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg>
-</body>
-</html>
+<?php include_once ('partials/footer.php'); ?>
